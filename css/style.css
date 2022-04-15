@@ -515,23 +515,15 @@ html {
 }
 
 
-*,*::before,*::after {
+*,
+*::before,
+*::after {
 	box-sizing: inherit;
 }
 
 /* END of the FIRST LESSON */
 
-
-/* header styles start */
 /* START OF THE SECOND LESSON */
-.header {
-	/* Приклеюєм хедер */
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
-
 /* Базові настройки для Body */
 body {
 	font-family: 'Lato';
@@ -545,6 +537,16 @@ body {
 	line-height: 1.2;
 	color: #102746;
 }
+
+/* header styles start */
+.header {
+	/* Приклеюєм хедер */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
 
 .wrapper {
 	max-width: 1060px;
@@ -566,7 +568,7 @@ body {
 }
 
 .header__item {
-	margin-right: 62px;
+	margin-right: 82px;
 }
 
 .header__item:last-child {
@@ -581,7 +583,9 @@ body {
 }
 
 /*Для наведення, нажимання, активності */
-.header__link:hover, .header__link:focus, .header__link:active {
+.header__link:hover,
+.header__link:focus,
+.header__link:active {
 	/* прозорість */
 	opacity: .75;
 }
@@ -591,10 +595,80 @@ body {
 /* intro style start */
 
 .intro {
-	height: 100vh;
+	min-height: 100vh;
 	background: url(../img/intro-bg.jpg) no-repeat, center;
 	/* картинка буде закривати блок при будь яких його розмірах*/
 	background-size: cover;
+	padding-top: 263px;
 }
+
 /* END OF THE SECOND LESSON */
+
+/* START OF THE THIRD LESSON */
+.intro__title {
+	max-width: 619px;
+	font-weight: 500;
+	font-size: 50px;
+	line-height: 60px;
+	color: #fff;
+	margin-bottom: 22px;
+}
+
+.intro__subtitle {
+	max-width: 546px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #fff;
+	margin-bottom: 59px;
+}
+
+.search-form__info {
+	/* прибираємо відступи між формами */
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.search-form__field {
+	width: 297px;
+	/* transparent - робимо інпут прозорим, виставляємо картинку з ліва і в горі*/
+	background: transparent url(../img/svg/circle-icon.svg) no-repeat left 6px;
+	/* картинка буде строго зафіксована*/
+	background-size: 20px;
+	border: 0;
+	border-bottom: 2px solid #BFC0C5;
+	margin-right: 60px;
+	/* відстань від краю інпута до тексту (розмір картинки + відстань між картинкою і текстом ) */
+	padding-left: 43px;
+	/* Відстань від тексту до бордера */
+	padding-bottom: 22px;
+	/* тест */
+	font-weight: 500;
+	font-size: 18px;
+	color: #fff;
+}
+
+.search-form__field::placeholder {
+	font-weight: 500;
+	font-size: 18px;
+	color: #fff;
+}
+
+
+.search-form__submit {
+	padding: 15px 39px;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 24px;
+	color: #fff;
+	background-color: #1B7DFF;
+	border: 0;
+}
+
+.search-form__submit:hover,
+.search-form__submit:active,
+.search-form__submit:focus {
+	background-color: #1663c8;
+}
+
+
 /* intro style end */
