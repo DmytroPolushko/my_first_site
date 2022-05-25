@@ -510,6 +510,13 @@ textarea {
 	/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+
+
+
+
+
+/* .......................................................... */
+/* Базові настройки */
 html {
 	box-sizing: border-box;
 }
@@ -521,9 +528,6 @@ html {
 	box-sizing: inherit;
 }
 
-/* END of the FIRST LESSON */
-
-/* START OF THE SECOND LESSON */
 /* Базові настройки для Body */
 body {
 	font-family: 'Lato';
@@ -537,6 +541,41 @@ body {
 	line-height: 1.2;
 	color: #102746;
 }
+
+/* Базові настройки для img */
+img {
+	/* щоб зображення не перебільшувало розмір контейнера в якому знаходиться */
+	max-width: 100%;
+	/* щоб зображення зжималось пропорційно по висоті */
+	height: auto;
+}
+
+
+/*загальні стилі для всіх заголовків що йдуть після  benefits*/
+.section__title {
+	font-weight: 500;
+	font-size: 35px;
+	line-height: 42px;
+	/* для нижнього прочерку */
+	position: relative;
+	/* 7px (відступ до прочерку) + 3px(висота прочерку) */
+	padding-bottom: 10px;
+}
+
+.section__title::after {
+	/* display доданий для того щоб зробити псевдоелемент блоком, для того щоб можна було виставляти висоту і ширину, але position: absolute заміняє властивість display (додана тому що додавав автор)*/
+	display: block;
+	content: '';
+	width: 253px;
+	height: 3px;
+	background-color: #006DFE;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+/* .......................................................... */
+
 
 /* header styles start */
 .header {
@@ -553,6 +592,7 @@ body {
 	/* Вирівнює по центру */
 	margin: 0 auto;
 }
+
 
 .header__wraper {
 	display: flex;
@@ -600,11 +640,10 @@ body {
 	/* картинка буде закривати блок при будь яких його розмірах*/
 	background-size: cover;
 	padding-top: 263px;
+	/* забули додати у відео */
+	padding-bottom: 376px;
 }
 
-/* END OF THE SECOND LESSON */
-
-/* START OF THE THIRD LESSON */
 .intro__title {
 	max-width: 619px;
 	font-weight: 500;
@@ -632,7 +671,7 @@ body {
 	width: 297px;
 	/* transparent - робимо інпут прозорим, виставляємо картинку з ліва і в горі*/
 	background: transparent url(../img/svg/circle-icon.svg) no-repeat left 6px;
-	/* картинка буде строго зафіксована*/
+	/* картинка буде строго зафіксован в розмірі*/
 	background-size: 20px;
 	border: 0;
 	border-bottom: 2px solid #BFC0C5;
@@ -641,7 +680,7 @@ body {
 	padding-left: 43px;
 	/* Відстань від тексту до бордера */
 	padding-bottom: 22px;
-	/* тест */
+	/* текст */
 	font-weight: 500;
 	font-size: 18px;
 	color: #fff;
@@ -670,5 +709,238 @@ body {
 	background-color: #1663c8;
 }
 
-
 /* intro style end */
+
+/* benefits style start */
+
+.benefits {
+	margin-bottom: 131px;
+}
+
+/* нова обгортка для benefits */
+.benefits__wrap {
+	max-width: 1262px;
+	background-color: #fff;
+	/* центруємо */
+	margin: 0 auto;
+	box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+	/* потрібний для того щоб дочірній елемент зпозиціюнувати абсолютно */
+	position: relative;
+}
+
+
+.benefits__title {
+	/* через абс.поз. виставляємо ширину що дорівнює ширині батьківського блоку */
+	width: 100%;
+	/* абсолютний елемент випадає з потока документа  (обов*язково top i left)*/
+	/* в даній ситуації працюючи з  transform, прибирає пустий блок, який утворюється на старому місці (див. інструменти розробника)*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* здвигаємо елемент на вказаний процент його висоти */
+	/* в даній ситуації комбінується з абсолютним позиціюванням */
+	transform: translateY(-99.7%);
+	font-size: 35px;
+	line-height: 42px;
+	font-weight: 500;
+	padding: 93px 100px 88px 100px;
+	background-color: #fff;
+}
+
+
+.benefits__cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 55px;
+	padding: 0 100px;
+}
+
+.benefits__card {
+	/* вказуємо явну ширину колонки що наші стовпці займають ро 1-му з 3 можливих стовпців*/
+	grid-column: span 1;
+	margin-bottom: 112px;
+}
+
+.benefits__card__pic {
+	margin-bottom: 37px;
+	/* розмір контейнера, під яку підлаштується картинка */
+	max-width: 66px;
+}
+
+.benefits__card__thumb {
+	/* мабуть щоб прибрати відступ (в даному випадку з права - див 2 і 3 картинку) */
+	/* щоб з'явився margin, який заповнить простір до краю батьківського контейнера */
+	display: block;
+}
+
+.benefits__card__title {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	margin-bottom: 26px;
+}
+
+.benefits__card__desc {
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 39px;
+}
+
+.benefits__card__more {
+	/*інлайн-блок потрібний для правильного розміщення бекграунда*/
+	/* при зменшені вікна браузера, стрілка буде строго по середині в блокові*/
+	display: inline-block;
+	font-size: 16px;
+	line-height: 24px;
+	color: #006DFE;
+	text-decoration: none;
+	padding-right: 59px;
+	background: url(../img/svg/arrow-right-icon.svg) no-repeat 95% center;
+	background-size: 33px;
+	/* анімація */
+	transition: .2s all;
+}
+
+.benefits__card__more:hover,
+.benefits__card__more:focus {
+	background: url(../img/svg/arrow-right-icon.svg) no-repeat right center;
+
+}
+
+/* benefits style end */
+
+/* places style start */
+
+.places {
+	margin-bottom: 131px;
+}
+
+/* нова обгортка для контента для places (що йде після benefits) */
+.wrapper__full {
+	max-width: 1262px;
+	margin: 0 auto;
+}
+
+.places__caption {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 36px;
+}
+
+.places__title {
+	/* відступ для  того щоб view all не прилип до h2*/
+	margin-right: 15px;
+}
+
+.places__view__all {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: #006DFE;
+	text-decoration: none;
+	padding-right: 59px;
+	background: url(../img/svg/arrow-right-icon.svg) no-repeat 95% center;
+	transition: .2s all;
+}
+
+.places__view__all:hover,
+.places__view__all:focus {
+	background: url(../img/svg/arrow-right-icon.svg) no-repeat right center;
+	background-size: 33px;
+}
+
+
+.places__cards {
+	display: grid;
+	/* 6 - тому що 2 і 3 добре діляться на 6 */
+	grid-template-columns: repeat(6, 1fr);
+	gap: 10px;
+}
+
+/* ефект затемнення - overlay (взятий з макета) */
+.places__card {
+	position: relative;
+	/* інший спосіб як зробити щоб картинка розтягнулася на всю ширину контейнера (див. в низ)
+	 для цього випадку також потрібний overflow: hidden
+	1/2 */
+	/* Обрізаємо картинку, яка вилазить за бокс */
+	overflow: hidden;
+}
+
+.places__card:after {
+	display: block;
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* той самий ефект затемнення */
+	background-color: rgba(21, 24, 36, 0.4);
+	z-index: 2;
+}
+
+.places__card:hover .places__card__pic {
+	transform: scale(1.1);
+
+}
+
+.places__card__title {
+	font-weight: 700;
+	font-size: 50px;
+	line-height: 60px;
+	color: #fff;
+	position: absolute;
+	bottom: 27px;
+	left: 29px;
+	z-index: 3;
+}
+
+.places__card__size__large {
+	/* перша і друга верхня карточка займає ширину по три колонки (в загальному їх шість: див. в гору) */
+	grid-column: span 3;
+}
+
+.places__card__size__small {
+	/* 3,4,5 нижня карточка займає ширину по дві колонки */
+	grid-column: span 2;
+}
+
+.places__card__pic {
+	width: 100%;
+	/* інший спосіб як зробити щоб картинка розтягнулася на всю ширину контейнера (див. в гору 2/2)*/
+	/* transform: scale(1.1); */
+	transition: .15s all;
+}
+
+/* модифікатор для великих карточок */
+.places__card__pic__size__large {
+	height: 354px;
+	/* object-fit - вказує як зображення буде маштабуватися в середині контейнера */
+	/* cover  - 	картинка буде змінювати свій (в даному випадку widht) розмір таким образом, щоб рівномірно заповнити блок і при цьому залишати у фокусі головне на картинці*/
+	object-fit: cover;
+}
+
+/* модифікатор для маленьких карточок */
+.places__card__pic__size__small {
+	height: 283px;
+	object-fit: cover;
+}
+
+.place__card__link {
+	/* розтягуємо нашу зсилку по контейнеру */
+	width: 100%;
+	height: 100%;
+	/* робимо щоб наша зсилка вилізла поверх картинкки */
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* щоб була найбільш приорітетніша з всіх абсолютно-зпозиційованих елементів */
+	z-index: 4;
+}
+
+
+
+/* places style end */
