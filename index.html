@@ -51,6 +51,7 @@
 	<!-- START MAIN -->
 	<main class="main">
 		<!-- intro start -->
+		<!-- використовуємо section томущо блок має заголовок -->
 		<section class="intro">
 			<div class="wrapper">
 				<h1 class="intro__title">
@@ -139,7 +140,7 @@
 					<a href="!#" class="places__view__all">VIEW ALL</a>
 				</div>
 
-				<div class="places__cards"> 
+				<div class="places__cards">
 					<!-- 2-й клас  places__card__size__large являється модифікатором для великих картинок, який потрібний для встановки колонок в грыдах-->
 					<figure class="places__card  places__card__size__large">
 						<!-- places__card__pic__size__large" - модифікатор для великих карточок -->
@@ -186,14 +187,202 @@
 						</figcaption>
 						<a href="#!" class="place__card__link"></a>
 					</figure>
-					
-					
+
+
 				</div>
 
 			</div>
 		</section>
 
 		<!-- places end -->
+
+
+		<!-- tours start -->
+
+		<!-- використовуємо div, тому що блок не має заголовку -->
+		<div class="tours">
+			<!-- використовуємо ту ж саму обгортку, тому що ширина блока така ж як і попередня -->
+			<div class="wrapper__full">
+				<!-- створюємо grid контейнер для карточок -->
+				<div class="tours__tour tour">
+					<div class="tour__pic">
+						<img src="./img/tour-1.jpg" alt="Prefecture in Focus: Tottori" class="tour__thumb">
+					</div>
+					<div class="tour__info">
+						<h3 class="tour__title">
+							Prefecture in Focus: Tottori
+						</h3>
+						<p class="tour__description">
+							Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being
+							gorgeous with belly side up i could pee on this if i had the energy but under the bed, for attack
+							the child, open the door,
+						</p>
+						<a href="#!" class="tour__more">VIEW PREFECTURE</a>
+					</div>
+				</div>
+
+				<div class="tours__tour tour">
+					<div class="tour__info">
+						<h3 class="tour__title">Featured Neighborhood: Kyoto’s Arashiyama</h3>
+						<p class="tour__description">
+							Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being
+							gorgeous with belly side up i could pee on this if i had the energy but under the bed, for
+							attack the child, open the door,
+						</p>
+						<a href="#!" class="tour__more">VIEW PREFECTURE</a>
+					</div>
+
+					<div class="tour__pic">
+						<img src="./img/tour-2.jpg" alt="Featured Neighborhood: Kyoto’s Arashiyama" class="tour__thumb">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- tours end -->
+
+		<!-- top places start -->
+
+		<section class="top__places">
+			<div class="wrapper__full">
+				<h2 class="top__places__title section__title">
+					Today top places to visit
+				</h2>
+
+				<div class="top__cards">
+					<!-- Обгортка для всієї карточки (картинка, текст, кнопка) -->
+					<div class="top__card">
+						<!--Обгортка що відповідає за картинку. Доп.(top__card__pic потрібна тому що img являється строчним елементом і до того ж ця обгортка буде батьківським елементом для дочірніх блоків, а саме блока що має в собі блоки top__card__likes i top__card__comments) -->
+						<div class="top__card__pic">
+							<img src="./img/top-place-1.jpg" alt="NAGOYA" class="top__card__thumb">
+							<!-- top__card__stats буде позиціюнуватися абсолютно відносно блока top__card__pic-->
+							<div class="top__card__stats">
+								<h3 class="top__card__title">
+									NAGOYA
+								</h3>
+								<div class="top__card__likes">
+									<span class="top__card__likes__value">221</span>
+								</div>
+								<div class="top__card__comments">
+									<span class="top__card__comments__value">50</span>
+								</div>
+							</div>
+						</div>
+						<p class="top__card__description">
+							Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being
+							gorgeous with belly side up i could pee on this.
+							Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being
+							gorgeous with belly side up i could pee on this.
+						</p>
+						<a href="#!" class="top__card__more">SEE MORE</a>
+					</div>
+
+					<div class="top__card">
+						<div class="top__card__pic">
+							<img src="./img/top-place-2.jpg" alt="NIIGATA" class="top__card__thumb">
+							<div class="top__card__stats">
+								<h3 class="top__card__title">NIIGATA</h3>
+								<div class="top__card__likes">
+									<span class="top__card__likes__value">331</span>
+								</div>
+								<div class="top__card__comments">
+									<span class="top__card__comments__value">54</span>
+								</div>
+							</div>
+						</div>
+						<p class="top__card__description">
+							Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being
+							gorgeous with belly side up i could pee on this.
+						</p>
+						<a href="#!" class="top__card__more">SEE MORE</a>
+					</div>
+
+					<div class="top__card">
+						<div class="top__card__pic">
+							<img src="/img/top-place-3.jpg" alt="OSAKA" class="top__card__thumb">
+							<div class="top__card__stats">
+								<h3 class="top__card__title">OSAKA</h3>
+								<div class="top__card__likes">
+									<span class="top__card__likes__value">312</span>
+								</div>
+								<div class="top__card__comments">
+									<span class="top__card__comments__value">124</span>
+								</div>
+							</div>
+						</div>
+						<p class="top__card__description">Jump off balcony, onto stranger's head. Chase ball of string hide
+							when guests come over. Being
+							gorgeous with belly side up i could pee on this.</p>
+						<a href="#!" class="top__card__more">SEE MORE</a>
+					</div>
+
+					<div class="top__card">
+						<div class="top__card__pic">
+							<img src="/img/top-place-4.jpg" alt="SAITAMA" class="top__card__thumb">
+							<div class="top__card__stats">
+								<h3 class="top__card__title">SAITAMA</h3>
+								<div class="top__card__likes">
+									<span class="top__card__likes__value">254</span>
+								</div>
+								<div class="top__card__comments">
+									<span class="top__card__comments__value">354</span>
+								</div>
+							</div>
+						</div>
+						<p class="top__card__description">Jump off balcony, onto stranger's head. Chase ball of string hide
+							when guests come over. Being
+							gorgeous with belly side up i could pee on this.</p>
+						<a href="#!" class="top__card__more">SEE MORE</a>
+					</div>
+
+					<div class="top__card">
+						<div class="top__card__pic">
+							<img src="/img/top-place-5.jpg" alt="UENO" class="top__card__thumb">
+							<div class="top__card__stats">
+								<h3 class="top__card__title">UENO</h3>
+								<div class="top__card__likes">
+									<span class="top__card__likes__value">154</span>
+								</div>
+								<div class="top__card__comments">
+									<span class="top__card__comments__value">132</span>
+								</div>
+							</div>
+						</div>
+						<p class="top__card__description">Jump off balcony, onto stranger's head. Chase ball of string hide
+							when guests come over. Being
+							gorgeous with belly side up i could pee on this.</p>
+						<a class="top__card__more">SEE MORE</a>
+					</div>
+
+					<div class="top__card">
+						<div class="top__card__pic">
+							<img src="/img/top-place-6.jpg" alt="SHIBUYA" class="top__card__thumb">
+							<div class="top__card__stats">
+								<h3 class="top__card__title">SHIBUYA</h3>
+								<div class="top__card__likes">
+									<span class="top__card__likes__value">264</span>
+								</div>
+								<div class="top__card__comments">
+									<span class="top__card__comments__value">198</span>
+								</div>
+							</div>
+						</div>
+						<p class="top__card__description">Jump off balcony, onto stranger's head. Chase ball of string hide
+							when guests come over. Being
+							gorgeous with belly side up i could pee on this.Jump off balcony, onto stranger's head. Chase ball
+							of string hide when guests come over. Being
+							gorgeous with belly side up i could pee on this.
+							Jump off balcony, onto stranger's head. Chase ball of string hide when guests come over. Being
+							gorgeous with belly side up i could pee on this.</p>
+						<a href="" class="top__card__more">SEE MORE</a>
+					</div>
+
+
+				</div>
+			</div>
+		</section>
+
+		<!-- top places end -->
 	</main>
 	<!--MAIN END -->
 

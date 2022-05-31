@@ -586,7 +586,7 @@ img {
 	width: 100%;
 }
 
-
+/* обгортка для header i intro */
 .wrapper {
 	max-width: 1060px;
 	/* Вирівнює по центру */
@@ -815,7 +815,7 @@ img {
 	margin-bottom: 131px;
 }
 
-/* нова обгортка для контента для places (що йде після benefits) */
+/* нова обгортка для контента  places (що йде після benefits) */
 .wrapper__full {
 	max-width: 1262px;
 	margin: 0 auto;
@@ -843,12 +843,13 @@ img {
 	padding-right: 59px;
 	background: url(../img/svg/arrow-right-icon.svg) no-repeat 95% center;
 	transition: .2s all;
+	background-size: 33px;
 }
 
 .places__view__all:hover,
 .places__view__all:focus {
 	background: url(../img/svg/arrow-right-icon.svg) no-repeat right center;
-	background-size: 33px;
+
 }
 
 
@@ -941,6 +942,182 @@ img {
 	z-index: 4;
 }
 
-
-
 /* places style end */
+
+
+
+/* tours style start */
+
+.tours {
+	margin-bottom: 139px;
+}
+
+.tours__tour {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0 61px;
+	align-items: center;
+	margin-bottom: 77px;
+}
+
+.tour__info {
+	padding-left: 47px;
+}
+
+.tour__title {
+	font-weight: 500;
+	font-size: 30px;
+	line-height: 40px;
+	margin-bottom: 85px;
+}
+
+
+
+.tour__description {
+	max-width: 519px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 58px;
+}
+
+.tour__more {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	text-decoration: none;
+	color: #006DFE;
+	background: url(/img/svg/arrow-right-icon.svg) no-repeat 95% center;
+	padding-right: 59px;
+	transition: .2s all;
+	background-size: 33px;
+}
+
+.tour__more:hover,
+.tour__more:focus {
+	background: url(/img/svg/arrow-right-icon.svg) no-repeat right center;
+}
+
+
+/* tours style end */
+
+
+/* top__places style start */
+
+.top__places {
+	/* має бути 86px а не 144px, тому що у самих карточок ще буде margin 58px*/
+	margin-bottom: 86px;
+}
+
+.top__places__title {
+	margin-bottom: 54px;
+}
+
+
+.top__cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 57px;
+}
+
+.top__card {
+	/* Робимо так, що при збілшені тексту під картинкою, кнопки завжди були одна навпроти одної (див ще на .top__card__more) */
+	display: flex;
+	flex-direction: column;
+}
+
+.top__card__pic {
+	position: relative;
+	margin-bottom: 45px;
+}
+
+.top__card__stats {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(21, 24, 36, 0.6);
+	padding: 15px 25px;
+	justify-content: flex-end;
+}
+
+.top__card__title {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	color: #fff;
+	/* елемент буде мати margin лише з права завдяки автопозицююванню */
+	margin: 0 auto 0 0;
+}
+
+/* Стилі приміняємо для top__card__likes a не  для top__card__likes__value для того щоб вони примінилися для всіх дочірніх елементів */
+.top__card__likes {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+	color: #fff;
+	padding-right: 20px;
+	position: relative;
+	margin-right: 14px
+}
+
+/* Варіант №1 - як вставити іконку (через псевдоелемент) */
+.top__card__likes::after {
+	content: '';
+	background: url(../img/svg/heart-icon.svg) no-repeat right center;
+	width: 100%;
+	height: 100%;
+	background-size: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* Стилі приміняємо для top__card__comments a не  для top__card__comments__value для того щоб вони примінилися для всіх дочірніх елементів */
+.top__card__comments {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+	color: #fff;
+	padding-right: 23px;
+	/* Варіант №2 - як вставити іконку */
+	background: url(../img/svg/coments-icon.svg) no-repeat right center;
+	background-size: 14px;
+}
+
+.top__card__description {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 31px;
+}
+
+.top__card__more {
+	/* display: inline-block;  потрібний тому що margin класа top__places ігнорує padding цього класу*/
+	display: inline-block;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	color: #fff;
+	background-color: #006DFE;
+	text-decoration: none;
+	/* в даній ситуації безпечніше використовувати padding а не width i height, тому що при збільшені контенту, текст не вилізе за свої рамки */
+	padding: 12px 19px;
+	border: 0;
+	text-transform: uppercase;
+	/* Робимо так, що при збілшені тексту під картинкою, кнопки завжди були одна навпроти одної (див ще на .top__card) 
+	Завдяки тому що блок top__card є display: flex, ми міняємо направлення з row на column, задаэмо width(бо кнопка розлізеться через те що є широкий(а у випадку з заміною направлення на column - довгий) елемент і вказуємо margin щоб кнопка прибилася до низу (схоже як з .top__card__title )*/
+	width: 118px;
+	margin: auto 0 0 0;
+}
+
+.top__card__more:hover,
+.top__card__more:active,
+.top__card__more:focus {
+	background-color: #1663c8;
+}
+
+/* top__places style end */
